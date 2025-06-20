@@ -35,10 +35,6 @@ int main()
 
             std::vector<int> *p_int_vector = reg.read_pointer<std::vector<int>>("p_int_vector", nullptr);
 
-            for(auto e: *p_int_vector)
-            {
-                std::cout << e << " ";
-            }
 
             
             // Reading non-existent value with default
@@ -52,6 +48,12 @@ int main()
             std::cout << "Price: " << price << std::endl;
             std::cout << "Non-existent: " << non_existent << std::endl;
             std::cout << "Non-existent num: " << non_existent_num << std::endl;
+            std::cout << "Pointer to int vector: ";
+            for(auto e: *p_int_vector)
+            {
+                std::cout << e << ",";
+            }
+            std::cout << std::endl;
             
             // Check if a value exists
             if (reg.value_exists("install_date"))
